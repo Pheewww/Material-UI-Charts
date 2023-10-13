@@ -1,0 +1,11 @@
+.bold-and-colored {
+    /* font-weight: bold; */
+    color: red;
+}
+
+.box {
+    width: 100px;
+    text-align: right;
+    color: red;
+    padding: 10px;
+}
