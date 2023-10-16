@@ -4,8 +4,9 @@
 //import Fetch from "./Fetch";
 
 import "./App.css";
+import Dashboard from "./Charts.jsx";
 // import { InstaFollow } from "./Cards1";
-import PieChart from "./Charts.jsx";
+
 // import { Chart as ChartJS } from "chart.js/auto";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       {/* Your components, including ChartComponent and PieChart */}
       <div>
         <h2>CHARTS</h2>
-        <PieChart />
+
+        <Dashboard />
       </div>
     </>
   );
