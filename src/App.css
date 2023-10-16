@@ -1,0 +1,89 @@
+#root {
+	/* max-width: 100%; */
+	margin: 0 auto;
+	padding: 2rem;
+	/* text-align: center; */
+}
+.plot {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	color: darkcyan;
+	padding: 20px;
+	width: 50%;
+	height: 50vh;
+}
+.table {
+	border: solid;
+	border-color: black;
+	border-width: 2px;
+}
+.charts {
+	display: flex;
+	margin: 20px;
+}
+/* Styles for the cards */
+.card {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+.action {
+	border: 1px solid #ccc;
+	width: 15%;
+	padding: 16px;
+}
+.description {
+	border: 1px solid #ccc;
+	width: 40%;
+	font-size: 20px;
+}
+.action p {
+	color: #6d6d6d;
+}
+.otherEventDesc1 {
+	height: 45%;
+	padding : 16px 0 0 16px;
+}
+.otherEventDesc2 {
+	display: flex;
+	color: #6d6d6d;
+	font-size: 15px;
+	height: 35%;
+}
+.otherEventDesc2 p {
+	margin: 0;
+	padding: 2px 0 0 16px;
+	border: solid 1px #ccc;
+}
+.completed-card {
+	background-color: #d3eedd;
+}
+
+
+.other-event-card {
+	background-color: #f0f0f0;
+}
+
+/* Styles for event details */
+.card h3 {
+	margin: 0 0 10px;
+}
+
+.card p {
+	margin: 0;
+}
+
+.audit-trail {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Optional: Adjust styles for responsive layout */
+@media (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+}
