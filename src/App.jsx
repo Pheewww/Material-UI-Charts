@@ -4,8 +4,7 @@
 //import Fetch from "./Fetch";
 
 import "./App.css";
-import Dashboard from "./Charts.jsx";
-// import { InstaFollow } from "./Cards1";
+import App1 from "./ChartUi";
 
 // import { Chart as ChartJS } from "chart.js/auto";
 
@@ -16,7 +15,7 @@ function App() {
       <div>
         <h2>CHARTS</h2>
 
-        <Dashboard />
+        <App1 />
       </div>
     </>
   );
