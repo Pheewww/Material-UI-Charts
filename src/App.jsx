@@ -1,30 +1,25 @@
-import "./App.css";
-import React from "react";
-import BarChart from "./components/BarChart";
-import DoughnutChart from "./components/DoughnutChart";
-import LineChart from "./components/LineChart";
-import RadarChart from "./components/RadarChart";
-import PolarPlot from "./components/PolarPlot";
-import AuditTable from "./components/AuditTable";
+// import DataGridComponent from './ComponentData_grid'
+//import MediaControlCard from "./Card";
+//import Users from "./Data_grid";
+//import Fetch from "./Fetch";
 
-const App = () => {
+import "./App.css";
+// import Dashboard from "./Charts.jsx";
+// import DocumentReport from "./components/DocumentReport";
+// import { InstaFollow } from "./Cards1";
+import SignDashboard from "./components/SignDashboard";
+
+// import { Chart as ChartJS } from "chart.js/auto";
+
+function App() {
 	return (
 		<>
-			{/* <div className="charts">
-				<BarChart />
-				<DoughnutChart />
+			{/* Your components, including ChartComponent and PieChart */}
+			<div>
+				<SignDashboard />
 			</div>
-			<div className="charts">
-				<RadarChart />
-				<LineChart />
-			</div>
-			<div className="charts">
-				<PolarPlot />
-			</div> */}
-			<br/>
-			<AuditTable />
 		</>
 	);
-};
+}
 
 export default App;

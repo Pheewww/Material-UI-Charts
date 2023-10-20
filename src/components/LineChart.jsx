@@ -1,66 +1,69 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React from 'react';
 import {
-	Chart as ChartJS,
-	LineElement,
-	CategoryScale,
-	LinearScale,
-	PointElement,
-	Legend,
-} from "chart.js";
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
-const LineChart = () => {
-	const data = {
-		labels: ["2014", "2015", "2016", "2017", "2018", "2019", "2020","2021"],
-		datasets: [
-			{
-				label: "4G Users",
-				data: [3, 6, 9, 12, 16, 17, 20],
-				backgroundColor: "transparent",
-				borderColor: "skyblue",
-				pointBorderColor: "blue",
-				pointBorderWidth: 4,
-				tension: 0.2,
-			},
-			{
-				label: "3G Users",
-				data: [15, 13, 12, 11, 9, 6, 3],
-				backgroundColor: "transparent",
-				borderColor: "pink",
-				pointBorderColor: "#ee538b",
-				pointBorderWidth: 4,
-				tension: 0.2,
-			},
-		],
-	};
 
-	const options = {
-		scales: {
-			x: {
-				grid: {
-					display: false,
-				},
-			},
-			y: {
-				min: 2,
-				max: 24,
-				ticks: {
-					stepSize: 2,
-					callback: (value) => value + "K",
-				},
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+	responsive: true,
+	plugins: {
+		legend: {
+			position: "bottom",
+			labels: {
+				boxWidth: 10,
 			},
 		},
-	};
-
-	return (
-		<>
-			<div className="plot">
-				<h1>Line Chart</h1>
-				<Line data={data} options={options}></Line>
-			</div>
-		</>
-	);
+	},
 };
+
+const labels = ["Jan", "Feb", "March", "April", "May", "June", "July"];
+
+// Generate random data for Dataset 1
+const dataset1Data = labels.map(() => Math.floor(Math.random() * 200) + 1);
+
+// Generate random data for Dataset 2
+const dataset2Data = labels.map(() => Math.floor(Math.random() * 200) + 1);
+
+export const data = {
+	labels,
+	datasets: [
+		{
+			label: "Dataset 1",
+			data: dataset1Data,
+			backgroundColor: "rgba(255, 99, 132, 0.9)",
+			borderColor: "rgb(255, 99, 132)",
+			borderWidth: 1,
+		},
+		{
+			label: "Dataset 2",
+			data: dataset2Data,
+			backgroundColor: "rgba(53, 162, 235, 0.7)",
+			borderColor: "rgb(53, 162, 235)",
+			borderWidth: 1,
+		},
+	],
+};
+
+function LineChart() {
+  return <Line options={options} data={data} />;
+}
 
 export default LineChart;

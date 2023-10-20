@@ -1,89 +1,61 @@
 #root {
-	/* max-width: 100%; */
 	margin: 0 auto;
 	padding: 2rem;
-	/* text-align: center; */
 }
-.plot {
+
+.documentReport {
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.areaChart {
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+.chartCard {
+	padding: 10px;
+	background-color: white;
+	border-radius: 3%;
+}
+.chart {
 	display: flex;
-	flex-direction: column;
-	text-align: center;
 	justify-content: center;
 	align-items: center;
-	color: darkcyan;
-	padding: 20px;
-	width: 50%;
-	height: 50vh;
+	height: 350;
+		padding:4;
+	/* width: inherit; */
 }
-.table {
-	border: solid;
-	border-color: black;
-	border-width: 2px;
+.icon {
+	text-align: right;
+	padding: 15px;
+	font-size: larger;
+	background-color: rgb(228, 228, 228);
+	border-radius: 100%;
 }
-.charts {
+.heading {
+	font-size: 30px;
 	display: flex;
-	margin: 20px;
+	padding-bottom: 15px;
+	justify-content: space-between;
 }
-/* Styles for the cards */
+.calenders {
+	display: flex;
+	justify-content:end;
+}
+.calender {
+	margin: 6px;
+}
+.Card1 {
+	display: flex;
+	flex-direction: row;
+}
+
 .card {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 16px;
-}
-.action {
-	border: 1px solid #ccc;
-	width: 15%;
-	padding: 16px;
-}
-.description {
-	border: 1px solid #ccc;
-	width: 40%;
-	font-size: 20px;
-}
-.action p {
-	color: #6d6d6d;
-}
-.otherEventDesc1 {
-	height: 45%;
-	padding : 16px 0 0 16px;
-}
-.otherEventDesc2 {
-	display: flex;
-	color: #6d6d6d;
-	font-size: 15px;
-	height: 35%;
-}
-.otherEventDesc2 p {
-	margin: 0;
-	padding: 2px 0 0 16px;
-	border: solid 1px #ccc;
-}
-.completed-card {
-	background-color: #d3eedd;
+	padding: 2em;
 }
 
-
-.other-event-card {
-	background-color: #f0f0f0;
-}
-
-/* Styles for event details */
-.card h3 {
-	margin: 0 0 10px;
-}
-
-.card p {
-	margin: 0;
-}
-
-.audit-trail {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-/* Optional: Adjust styles for responsive layout */
-@media (max-width: 768px) {
-	.card {
-		width: 100%;
-	}
+.read-the-docs {
+	color: #888;
 }
