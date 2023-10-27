@@ -1,22 +1,22 @@
-// import DataGridComponent from './ComponentData_grid'
-//import MediaControlCard from "./Card";
-//import Users from "./Data_grid";
-//import Fetch from "./Fetch";
-
 import "./App.css";
-// import Dashboard from "./Charts.jsx";
-// import DocumentReport from "./components/DocumentReport";
-// import { InstaFollow } from "./Cards1";
-import SignDashboard from "./components/SignDashboard";
-
-// import { Chart as ChartJS } from "chart.js/auto";
+import DocumentReport from "./components/Template UI/DocumentReport";
+import SignDashboard from "./components/DashBoard UI/SignDashboard";
+import HeatCalender from "./components/DashBoard UI/Heatmap";
+import ChartComponent from "./components/DashBoard UI/Chart_component";
+import { Divider } from "@mui/material";
 
 function App() {
 	return (
 		<>
 			{/* Your components, including ChartComponent and PieChart */}
 			<div>
+				{/* <ChartComponent />
+				<Divider variant="middle" />
+				<HeatCalender />
+				<Divider variant="middle" />
 				<SignDashboard />
+				<Divider variant="middle" /> */}
+				<DocumentReport />
 			</div>
 		</>
 	);
