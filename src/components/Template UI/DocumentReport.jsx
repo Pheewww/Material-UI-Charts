@@ -1,8 +1,14 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import DoughnutChart from "./DougnutChart";
-import { Box, Button, Stack } from "@mui/material";
+import { Typography, Grid, Box } from "@mui/material";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+
+import DoughnutChart from "./DoughnutChart";
 import Cards from "./Cards";
+import Filter from "./Filter";
+import BarChart from "./BarChart";
 
 const DocumentReport = () => {
 	return (
@@ -11,41 +17,37 @@ const DocumentReport = () => {
 				<Typography fontSize="20px" paddingTop={4}>
 					Template Report
 				</Typography>
+				{/* Calenders */}
+				<Box className="calenders">
+					{/* Start Date */}
+					<Box className="calender" width="40%">
+						<LocalizationProvider dateAdapter={AdapterDayjs}>
+							<DemoContainer components={["DatePicker"]}>
+								<DatePicker label="Start Date" format="YYYY-MM-DD" />
+							</DemoContainer>
+						</LocalizationProvider>
+					</Box>
+					{/* End Date */}
+					<Box className="calender" width="40%">
+						<LocalizationProvider dateAdapter={AdapterDayjs}>
+							<DemoContainer components={["DatePicker"]}>
+								<DatePicker label="End Date" format="YYYY-MM-DD" />
+							</DemoContainer>
+						</LocalizationProvider>
+					</Box>
+				</Box>
 			</Box>
-			<Box>
-				<Box backgroundColor="rgb(228, 228, 228)" padding={4}>
-					<Stack
-						direction={"row"}
-						spacing={2}
-						sx={{
-							display: "inline-block",
-							borderRadius: "5px",
-							padding: "10px",
-							margin: "10px",
-							backgroundColor: "white",
-						}}
-					>
-						<Button variant="outlined" sx={{ width: "120px" }}>
-							Today
-						</Button>
-						<Button variant="outlined" sx={{ width: "120px" }}>
-							Yesterday
-						</Button>
-						<Button variant="outlined" sx={{ width: "120px" }}>
-							Week
-						</Button>
-						<Button variant="outlined" sx={{ width: "120px" }}>
-							Month
-						</Button>
-					</Stack>
-					<Box display={"flex"}>
+			<Box backgroundColor="rgb(228, 228, 228)" padding={4}>
+				<Grid container spacing={3}>
+					{/* Top 5 Templates */}
+					<Grid item xs={12} sm={8} borderRadius={"5px"}>
 						<Box
 							sx={{
-								padding: "10px",
 								backgroundColor: "white",
+								height: "55vh",
+								width: "100%",
+								paddingTop: "10px",
 							}}
-							height={"55vh"}
-							width={"65vw"}
 						>
 							<Typography align={"center"}>Top 5 Templates</Typography>
 							<Box
@@ -54,25 +56,35 @@ const DocumentReport = () => {
 									justifyContent: "center",
 									alignItems: "center",
 									height: "50vh",
-									padding: "4px",
 								}}
 							>
 								<DoughnutChart />
 							</Box>
 						</Box>
-						<Cards />
-					</Box>
-				</Box>
+					</Grid>
 
+					{/* Cards */}
+					<Grid item xs={12} sm={4}>
+						<Cards />
+					</Grid>
+				</Grid>
+
+				{/* Filter */}
+				<Filter />
+
+				{/* BarChart */}
 				<Box
-					display="flex"
-					backgroundColor="rgb(228, 228, 228)"
-					paddingBottom={4}
-					paddingX={4}
-				></Box>
+					sx={{
+						display: "inline-block",
+						borderRadius: "5px",
+						padding: "10px",
+						backgroundColor: "white",
+					}}
+				>
+					<BarChart />
+				</Box>
 			</Box>
 		</Box>
 	);
 };
-
 export default DocumentReport;
